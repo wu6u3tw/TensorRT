@@ -3118,7 +3118,7 @@ def acc_ops_permute(
         permutation = [i - 1 for i in permutation[1:]]
 
     layer = network.add_shuffle(input_val)
-    layer.second_transpose = tuple(permutation)
+    layer.first_transpose = tuple(permutation)
     set_layer_name(layer, target, name)
     return layer.get_output(0)
 
